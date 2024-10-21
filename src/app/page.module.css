@@ -163,3 +163,19 @@ a.secondary {
     filter: invert();
   }
 }
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.container p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
