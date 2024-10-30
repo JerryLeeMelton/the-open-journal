@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./Menu.module.css"
-const Menu = () => {
+
+const Menu: React.FC = () => {
   return <div className={styles.container}>Menu</div>
 }
 
