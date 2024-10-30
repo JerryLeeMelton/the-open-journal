@@ -2,6 +2,8 @@ import React from "react"
 import styles from "./Navbar.module.css"
 import Image from "next/image"
 import Link from "next/dist/client/link"
+import AuthLinks from "../authLinks/AuthLinks"
+import ThemeToggle from "../themeToggle/ThemeToggle"
 
 const Navbar: React.FC = () => {
   const socialIconSize: number = 24
@@ -30,9 +32,11 @@ const Navbar: React.FC = () => {
       </div>
       <div className={styles.logo}>the open journal</div>
       <div className={styles.links}>
+        <ThemeToggle />
         <Link href="/">Home</Link>
-        <Link href="/">About</Link>
-        <Link href="/">Contact</Link>
+        <Link href="/about">About</Link>
+        <Link href="/contact">Contact</Link>
+        <AuthLinks />
       </div>
     </div>
   )
