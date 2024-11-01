@@ -4,7 +4,7 @@ import "./globals.css"
 import { Inter } from "next/font/google"
 import Navbar from "@/components/navbar/Navbar"
 import Footer from "@/components/footer/Footer"
-import ThemeProvider from "@/context/ThemeContext"
+import ThemeContextProvider from "@/context/ThemeContext"
 
 export const metadata: Metadata = {
   title: "The Open Journal",
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider>
+        <ThemeContextProvider>
           <div className="container">
             <div className="wrapper">
               <Navbar />
@@ -29,7 +29,7 @@ export default function RootLayout({
               <Footer />
             </div>
           </div>
-        </ThemeProvider>
+        </ThemeContextProvider>
       </body>
     </html>
   )

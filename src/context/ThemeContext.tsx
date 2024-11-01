@@ -20,7 +20,7 @@ const getThemeFromLocalStorage = (): string => {
   }
 }
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
+export const ThemeContextProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [theme, setTheme] = useState("light")
@@ -36,4 +36,4 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   )
 }
 
-export default ThemeProvider
+export default ThemeContextProvider
