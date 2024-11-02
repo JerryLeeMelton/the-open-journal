@@ -21,6 +21,20 @@ a {
   text-decoration: none;
 }
 
+/* Color Themes */
+.light-theme {
+  --bg: white;
+  --textColor: black;
+  --softBG: #f0f0f0;
+  --softTextColor: #626262;
+}
+.dark-theme {
+  --bg: black;
+  --textColor: white;
+  --softBG: #181818;
+  --softTextColor: #b3b3b3;
+}
+
 .container {
   min-height: 100vh;
   background-color: var(--bg);

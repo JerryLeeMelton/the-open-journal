@@ -2,9 +2,10 @@
 
 import { createContext, useState, useEffect } from "react"
 
-type ThemeContextType = {
-  theme: string
-  setTheme: React.Dispatch<React.SetStateAction<string>>
+export type ThemeContextType = {
+  colorTheme: string
+  setColorTheme: React.Dispatch<React.SetStateAction<string>>
+  toggleTheme: () => void
 }
 
 export const ThemeContext = createContext<ThemeContextType | undefined>(
@@ -13,24 +14,33 @@ export const ThemeContext = createContext<ThemeContextType | undefined>(
 
 const getThemeFromLocalStorage = (): string => {
   try {
-    const value = localStorage.getItem("theme")
-    return value || "light"
+    const value = localStorage.getItem("colorTheme")
+    return value || "dark"
   } catch {
-    return "light"
+    return "dark"
   }
 }
 
 export const ThemeContextProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [theme, setTheme] = useState("light")
+  const [colorTheme, setColorTheme] = useState("dark")
+
+  const toggleTheme = () => {
+    console.log("toggleTheme  :  colorTheme == ", colorTheme)
+    setColorTheme(colorTheme === "light" ? "dark" : "light")
+  }
 
   useEffect(() => {
-    setTheme(getThemeFromLocalStorage())
+    setColorTheme(getThemeFromLocalStorage())
   }, [])
 
+  useEffect(() => {
+    localStorage.setItem("colorTheme", colorTheme)
+  }, [colorTheme])
+
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ colorTheme, setColorTheme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   )

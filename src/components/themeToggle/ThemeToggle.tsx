@@ -7,12 +7,14 @@ import { ThemeContext } from "@/context/ThemeContext"
 
 const ThemeToggle: React.FC = () => {
   const toggleIconsize: number = 14
-  const { theme } = useContext(ThemeContext) || { theme: "light" }
+  const { colorTheme, toggleTheme } = useContext(ThemeContext) || {
+    colorTheme: "light",
+  }
 
-  console.log("ThemeToggle.tsx  :  theme == ", theme)
+  console.log("ThemeToggle.tsx  :  colorTheme == ", colorTheme)
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={toggleTheme}>
       <Image
         src="/moon.png"
         alt="moon"
