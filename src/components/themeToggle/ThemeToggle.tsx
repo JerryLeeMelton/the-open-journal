@@ -19,8 +19,8 @@ const ThemeToggle: React.FC = () => {
       onClick={toggleTheme}
       style={
         colorTheme === "dark"
-          ? { background: "white" }
-          : { background: "black" }
+          ? { backgroundColor: "white" }
+          : { backgroundColor: "black" }
       }
     >
       <Image
@@ -36,12 +36,12 @@ const ThemeToggle: React.FC = () => {
             ? {
                 left: 1,
                 right: "unset",
-                background: "black",
+                backgroundColor: "black",
               }
             : {
                 right: 1,
                 left: "unset",
-                background: "white",
+                backgroundColor: "white",
               }
         }
       ></div>
