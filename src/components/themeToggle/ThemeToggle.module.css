@@ -16,11 +16,13 @@
 
 .ball {
   position: absolute;
-  left: 1px;
 
   width: 0.938rem;
   height: 0.938rem;
   border-radius: 50%;
 
   background-color: white;
+
+  /* TODO: Figure out why this is not working */
+  transition: left 1s ease-out, right 1s ease-out;
 }

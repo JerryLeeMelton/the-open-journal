@@ -14,14 +14,37 @@ const ThemeToggle: React.FC = () => {
   console.log("ThemeToggle.tsx  :  colorTheme == ", colorTheme)
 
   return (
-    <div className={styles.container} onClick={toggleTheme}>
+    <div
+      className={styles.container}
+      onClick={toggleTheme}
+      style={
+        colorTheme === "dark"
+          ? { background: "white" }
+          : { background: "black" }
+      }
+    >
       <Image
         src="/moon.png"
         alt="moon"
         width={toggleIconsize}
         height={toggleIconsize}
       />
-      <div className={styles.ball}></div>
+      <div
+        className={styles.ball}
+        style={
+          colorTheme === "dark"
+            ? {
+                left: 1,
+                right: "unset",
+                background: "black",
+              }
+            : {
+                right: 1,
+                left: "unset",
+                background: "white",
+              }
+        }
+      ></div>
       <Image
         src="/sun.png"
         alt="sun"
