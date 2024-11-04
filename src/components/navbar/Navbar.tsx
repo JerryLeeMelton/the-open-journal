@@ -33,9 +33,15 @@ const Navbar: React.FC = () => {
       <div className={styles.logo}>the open journal</div>
       <div className={styles.links}>
         <ThemeToggle />
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-        <Link href="/contact">Contact</Link>
+        <Link href="/" className={styles.link}>
+          Home
+        </Link>
+        <Link href="/about" className={styles.link}>
+          About
+        </Link>
+        <Link href="/contact" className={styles.link}>
+          Contact
+        </Link>
         <AuthLinks />
       </div>
     </div>

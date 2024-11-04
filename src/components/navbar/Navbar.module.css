@@ -20,7 +20,6 @@
   font-weight: bold;
   font-size: 2.25rem;
 }
-
 .links {
   display: flex;
   align-items: center;
@@ -28,4 +27,40 @@
   flex: 1;
 
   font-size: 1.25rem;
+}
+
+@media screen and (max-width: 1280px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+  .link {
+    font-size: 1rem;
+    gap: 15px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .social {
+    display: none;
+  }
+  .logo {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 768px) {
+  .social {
+    display: none;
+  }
+  .logo {
+    text-align: left;
+    font-size: 1.25rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  .links {
+    justify-content: flex-end;
+  }
+  .link {
+    display: none;
+    /* background-color: red; */
+  }
 }
