@@ -1,2 +1,49 @@
 .container {
 }
+
+.title {
+  margin: 50px 0px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 15%;
+  height: 80px;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+/* Individual Category Styles */
+.category.coding {
+  background-color: coral;
+}
+.category.music {
+  background-color: #69ab7a;
+}
+.category.film {
+  background-color: #775aec;
+}
+.category.food {
+  background-color: #ff9c81;
+}
+.category.mtg {
+  background-color: #ff96f9;
+}
+.category.philosophy {
+  background-color: #45bf55;
+}
+
+.image {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
