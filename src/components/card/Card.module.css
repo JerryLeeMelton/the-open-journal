@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  margin-bottom: 50px;
+  gap: 50px;
+  align-items: center;
+}
+
+.imageContainer {
+  display: flex;
+  flex: 1;
+  height: 350px;
+  position: relative;
+}
+
+.textContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.description {
+  display: flex;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: var(--softTextColor);
+}
+
+.date {
+  color: #999;
+}
+
+.category {
+  color: crimson;
+  font-weight: 500;
+}
+
+.readMoreLink {
+  border-bottom: 1px solid crimson;
+  width: max-content;
+  padding: 2px 0;
+}
