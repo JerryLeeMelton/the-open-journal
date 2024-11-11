@@ -1,5 +1,36 @@
-.categoryContainer {
+.categoryList {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 35px;
+  margin-bottom: 60px;
   gap: 20px;
+}
+
+.categoryItem {
+  display: flex;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  text-align: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.categoryItem.coding {
+  background-color: var(--category-coding);
+}
+.categoryItem.music {
+  background-color: var(--category-music);
+}
+.categoryItem.film {
+  background-color: var(--category-film);
+}
+.categoryItem.food {
+  background-color: var(--category-food);
+}
+.categoryItem.gaming {
+  background-color: var(--category-gaming);
+}
+.categoryItem.philosophy {
+  background-color: var(--category-philosophy);
 }
