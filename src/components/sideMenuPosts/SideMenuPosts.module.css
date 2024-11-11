@@ -1,0 +1,95 @@
+.container {
+  flex: 2;
+  margin-top: 60px;
+}
+
+.sideMenuSubtitle {
+  color: var(--softTextColor);
+  font-size: 1rem;
+  font-weight: 400;
+}
+.sideMenuTitle {
+  font-size: 1.75rem;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin-top: 35px;
+  margin-bottom: 60px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.imageContainer {
+  position: relative;
+  flex: 1;
+  aspect-ratio: 1/1;
+}
+.image {
+  border-radius: 50%;
+  border: 3px solid lightgray;
+  object-fit: cover;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 4;
+}
+
+.postTitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--softTextColor);
+}
+.postDetails {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--softTextColor);
+}
+
+.postCategory {
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--softTextColor);
+  max-width: max-content;
+}
+.postCategory.coding {
+  background-color: var(--category-coding);
+}
+.postCategory.music {
+  background-color: var(--category-music);
+}
+.postCategory.film {
+  background-color: var(--category-film);
+}
+.postCategory.food {
+  background-color: var(--category-food);
+}
+.postCategory.gaming {
+  background-color: var(--category-gaming);
+}
+.postCategory.philosophy {
+  background-color: var(--category-philosophy);
+}
+
+.categoryList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.categoryItem {
+  display: flex;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
