@@ -43,6 +43,15 @@
   border: none;
   border-radius: 0.313rem;
   width: max-content;
+  background-color: var(--textColor);
+  color: var(--bg);
+
+  transition: background-color 0.1s ease-out;
+}
+.button:hover {
+  background-color: var(--softTextColor);
+  /* background-color: red; */
+  color: var(--bg);
 }
 
 @media screen and (max-width: 1280px) {

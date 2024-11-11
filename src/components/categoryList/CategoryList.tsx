@@ -9,7 +9,7 @@ const CategoryList: React.FC = () => {
     { name: "Music", slug: "music" },
     { name: "Film", slug: "film" },
     { name: "Food", slug: "food" },
-    { name: "MTG", slug: "mtg" },
+    { name: "Gaming", slug: "gaming" },
     { name: "Philosophy", slug: "philosophy" },
   ]
 

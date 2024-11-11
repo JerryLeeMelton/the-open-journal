@@ -26,22 +26,22 @@
 
 /* Individual Category Styles */
 .category.coding {
-  background-color: coral;
+  background-color: var(--category-coding);
 }
 .category.music {
-  background-color: #69ab7a;
+  background-color: var(--category-music);
 }
 .category.film {
-  background-color: #775aec;
+  background-color: var(--category-film);
 }
 .category.food {
-  background-color: #ff9c81;
+  background-color: var(--category-food);
 }
-.category.mtg {
-  background-color: #ff96f9;
+.category.gaming {
+  background-color: var(--category-gaming);
 }
 .category.philosophy {
-  background-color: #45bf55;
+  background-color: var(--category-philosophy);
 }
 
 .image {

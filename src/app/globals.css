@@ -1,8 +1,25 @@
 :root {
   --bg: white;
-  --textColor: black;
+  --textColor: #0a0a0a;
   --softBG: #f0f0f0;
   --softTextColor: #626262;
+
+  --baseBlack: #1a1a1a;
+  --baseWhite: #e8e8e8;
+  --softBlack: #303030;
+  --softWhite: #aaaaaa;
+
+  /* --textColor: #0a0a0a;
+  --softBG: #f0f0f0;
+  --softTextColor: #626262; */
+
+  --category-coding: #ff6961;
+  --category-music: #cbaacb;
+  --category-film: #aec6cf;
+  --category-food: #ffb347;
+  /* --category-gaming: #fdfd96; */
+  --category-gaming: #f0c1e1;
+  --category-philosophy: #77dd77;
 }
 
 * {
@@ -23,16 +40,16 @@ a {
 
 /* Color Themes */
 .light-theme {
-  --bg: white;
-  --textColor: black;
-  --softBG: #f0f0f0;
-  --softTextColor: #626262;
+  --bg: var(--baseWhite);
+  --textColor: var(--baseBlack);
+  --softBG: var(--softWhite);
+  --softTextColor: var(--softBlack);
 }
 .dark-theme {
-  --bg: black;
-  --textColor: white;
-  --softBG: #181818;
-  --softTextColor: #b3b3b3;
+  --bg: var(--baseBlack);
+  --textColor: var(--baseWhite);
+  --softBG: var(--softBlack);
+  --softTextColor: var(--softWhite);
 }
 
 .container {
