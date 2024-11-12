@@ -1,0 +1,97 @@
+/* INFO & HERO IMAGE AREA ================================== */
+.infoContainer {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.textContainer {
+  flex: 1;
+}
+
+.postTitle {
+  font-size: 4rem;
+  margin-bottom: 50px;
+}
+
+.imageContainer {
+  flex: 1;
+  height: 350px;
+  position: relative;
+}
+.userAvatar,
+.heroImage {
+  object-fit: cover;
+}
+
+/* USER INFO AREA ================================== */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.userImageContainer {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.userAvatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+.userTextContainer {
+  display: flex;
+  flex-direction: column;
+  color: var(--softTextColor);
+  gap: 5px;
+}
+.username {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+/* CONTENT AREA ================================== */
+.contentContainer {
+  display: flex;
+  gap: 50px;
+}
+.post {
+  flex: 5;
+  margin-top: 60px;
+}
+.postContent {
+  margin-bottom: 50px;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+.postContent p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+/* RESPONSIVE DESIGN ================================== */
+@media screen and (max-width: 1536px) {
+  .postTitle {
+    font-size: 54px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .postTitle {
+    font-size: 48px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .imageContainer {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  .postTitle {
+    font-size: 36px;
+  }
+
+  .postContent p {
+    font-size: 18px;
+  }
+}
