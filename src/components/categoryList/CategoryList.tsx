@@ -21,6 +21,7 @@ const CategoryList: React.FC = () => {
           <Link
             href={`/blog?cat=${category.slug}`}
             className={`${styles.category} ${styles[category.slug]}`}
+            key={"category-" + category.slug}
           >
             <Image
               src={`/${category.slug}.png`}
