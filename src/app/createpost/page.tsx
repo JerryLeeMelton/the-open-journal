@@ -1,22 +1,29 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState } from "react"
 import styles from "./CreatePost.module.css"
 import Image from "next/image"
-import ReactQuill from "react-quill"
-import "react-quill/dist/quill.snow.css"
+import ReactQuill from "react-quill-new"
+import "react-quill-new/dist/quill.snow.css"
+import "react-quill-new/dist/quill.bubble.css"
 
 const CreatePost = () => {
-  const [openAddMenu, setOpenAddMenu] = useState<boolean>(false)
+  const [addMenuOpen, setAddMenuOpen] = useState<boolean>(false)
+  const [content, setContent] = useState<string>("")
 
   return (
     <div className={styles.container}>
       <input type="text" placeholder="Title" />
       <div className={styles.editor}>
-        <button className={styles.editorButton}>
+        <button
+          className={styles.editorButton}
+          onClick={() => {
+            setAddMenuOpen(!addMenuOpen)
+          }}
+        >
           <Image src={"/plus.png"} alt="bold" width={16} height={16} />
         </button>
-        {openAddMenu && (
+        {addMenuOpen && (
           <div className={styles.addMenu}>
             <button className={styles.addMenuButton}>
               <Image src={"/image.png"} alt="bold" width={16} height={16} />
@@ -29,7 +36,12 @@ const CreatePost = () => {
             </button>
           </div>
         )}
-        <ReactQuill theme="bubble" />
+        <ReactQuill
+          theme="bubble"
+          value={content}
+          onChange={setContent}
+          placeholder="What are you thinking about?"
+        />
       </div>
     </div>
   )
