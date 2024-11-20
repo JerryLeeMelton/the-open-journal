@@ -3,3 +3,64 @@
   display: flex;
   flex-direction: column;
 }
+
+.editor {
+  display: flex;
+  gap: 20px;
+  height: 700px;
+  position: relative;
+}
+.editorInput {
+  width: 100%;
+}
+
+.titleInput {
+  color: var(--textColor);
+  padding: 50px;
+  font-size: 4rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.titleInput::placeholder {
+  color: var(--softTextColor);
+}
+
+.addMenu {
+  display: flex;
+  gap: 20px;
+  background-color: transparent;
+  background-color: var(--bgTransparent);
+  position: absolute;
+  z-index: 100;
+  left: 58px;
+  border-radius: 20px;
+  /* padding: 20px; */
+}
+.editorButton,
+.addMenuButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--bg);
+  border: 1px solid var(--textColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.addMenuButton {
+  border: 1px solid #1a8917;
+}
+
+.publishButton {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: #1a8917;
+  color: var(--baseWhite);
+  cursor: pointer;
+}

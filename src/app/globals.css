@@ -5,7 +5,9 @@
   --softTextColor: #626262;
 
   --baseBlack: #1a1a1a;
+  --baseBlackTransparent: #1a1a1a80;
   --baseWhite: #e8e8e8;
+  --baseWhiteTransparent: #e8e8e880;
   --softBlack: #303030;
   --softWhite: #aaaaaa;
 
@@ -41,12 +43,14 @@ a {
 /* Color Themes */
 .light-theme {
   --bg: var(--baseWhite);
+  --bgTransparent: var(--baseWhiteTransparent);
   --textColor: var(--baseBlack);
   --softBG: var(--softWhite);
   --softTextColor: var(--softBlack);
 }
 .dark-theme {
   --bg: var(--baseBlack);
+  --bgTransparent: var(--baseBlackTransparent);
   --textColor: var(--baseWhite);
   --softBG: var(--softBlack);
   --softTextColor: var(--softWhite);

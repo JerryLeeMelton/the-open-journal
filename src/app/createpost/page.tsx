@@ -13,7 +13,7 @@ const CreatePost = () => {
 
   return (
     <div className={styles.container}>
-      <input type="text" placeholder="Title" />
+      <input type="text" placeholder="Title" className={styles.titleInput} />
       <div className={styles.editor}>
         <button
           className={styles.editorButton}
@@ -37,12 +37,14 @@ const CreatePost = () => {
           </div>
         )}
         <ReactQuill
+          className={styles.editorInput}
           theme="bubble"
           value={content}
           onChange={setContent}
           placeholder="What are you thinking about?"
         />
       </div>
+      <button className={styles.publishButton}>Publish</button>
     </div>
   )
 }
