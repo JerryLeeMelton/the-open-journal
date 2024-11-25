@@ -11,8 +11,6 @@ const ThemeToggle: React.FC = () => {
     colorTheme: "light",
   }
 
-  console.log("ThemeToggle.tsx  :  colorTheme == ", colorTheme)
-
   return (
     <div
       className={styles.container}

@@ -3,19 +3,41 @@
 import React, { useState } from "react"
 import styles from "./AuthLinks.module.css"
 import Link from "next/link"
+import { useUserAuth } from "@/context/UserAuthContext"
+import { useRouter } from "next/navigation"
 
 const AuthLinks: React.FC = () => {
   const [open, setOpen] = useState(false)
-  // temporary auth status
-  const authStatus: string = "not-authenticated"
-  // const authStatus: string = "authenticated"
+  const { loggedIn, user, setLoginState } = useUserAuth()
+  const router = useRouter()
+
+  const handleLogoutRequest = async () => {
+    console.log("handleLogoutRequest")
+
+    try {
+      const response = await fetch("/api/simplelogout", {
+        method: "POST",
+      })
+
+      const result = await response.json()
+
+      if (result.ok) {
+        setLoginState({ loggedIn: false, user: null })
+        router.push("/login")
+      }
+    } catch (error) {
+      console.error("handleLogoutRequest  :  error, inside catch == ", error)
+    }
+  }
 
   return (
     <>
-      {authStatus === "authenticated" ? (
+      {loggedIn ? (
         <>
-          <Link href="/newpost">New Post</Link>
-          <span className={styles.link}>Logout</span>
+          <Link href="/newpost">Create</Link>
+          <span onClick={handleLogoutRequest} className={styles.link}>
+            Logout
+          </span>
         </>
       ) : (
         <Link href="/login" className={styles.link}>
@@ -41,12 +63,15 @@ const AuthLinks: React.FC = () => {
           <Link href="/" className={styles["burger-menu-link"]}>
             Contact
           </Link>
-          {authStatus === "authenticated" ? (
+          {loggedIn ? (
             <>
               <Link href="/newpost" className={styles["burger-menu-link"]}>
-                New Post
+                Create
               </Link>
-              <span className={`${styles.link} ${styles["burger-menu-link"]}`}>
+              <span
+                onClick={handleLogoutRequest}
+                className={`${styles.link} ${styles["burger-menu-link"]}`}
+              >
                 Logout
               </span>
             </>

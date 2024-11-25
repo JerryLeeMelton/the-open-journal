@@ -1,8 +1,10 @@
 :root {
   --bg: white;
-  --textColor: #0a0a0a;
+  --textColor: #1a1a1a;
   --softBG: #f0f0f0;
   --softTextColor: #626262;
+
+  --skyBlueColor: #1abaff;
 
   --baseBlack: #1a1a1a;
   --baseBlackTransparent: #1a1a1a80;
