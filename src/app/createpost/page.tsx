@@ -35,6 +35,7 @@ const CreatePost = () => {
   }
 
   const handleTagChange = (slug: string) => {
+    console.log("CreatePost  :  handleTagChange  :  slug == ", slug)
     setPostTags((prevTags) => {
       if (prevTags.includes(slug)) {
         return prevTags.filter((tag) => tag !== slug)
@@ -137,16 +138,22 @@ const CreatePost = () => {
           {categories.map((category) => (
             <div
               key={"tag-selector-" + category.slug}
-              className={styles.tagCheckboxContainer}
+              className={`${styles.tagCheckboxContainer} ${
+                styles[category.slug]
+              }`}
+              onClick={() => handleTagChange(category.slug)}
             >
               <label className={styles.tagCheckbox}>
                 <input
                   type="checkbox"
                   value={category.slug}
                   checked={postTags.includes(category.slug)}
-                  onChange={() => handleTagChange(category.slug)}
+                  onChange={() => handleTagChange(category.slug)} // Add this handler
+                  onClick={(e) => e.stopPropagation()} // Prevent bubbling to the container
                 />
-                {category.name}
+                <span onClick={(e) => e.stopPropagation()}>
+                  {category.name}
+                </span>
               </label>
             </div>
           ))}

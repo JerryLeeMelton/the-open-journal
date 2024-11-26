@@ -64,3 +64,70 @@
   color: var(--baseWhite);
   cursor: pointer;
 }
+
+/* Tag Checkboxes ============================= */
+.tagCheckbox input {
+  margin-right: 8px;
+}
+.tagsList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px;
+}
+.tagCheckboxContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 15%;
+
+  transition: width 0.1s ease-out;
+}
+/* Individual Category Styles */
+.tagCheckboxContainer.coding {
+  background-color: var(--category-coding);
+}
+.tagCheckboxContainer.music {
+  background-color: var(--category-music);
+}
+.tagCheckboxContainer.film {
+  background-color: var(--category-film);
+}
+.tagCheckboxContainer.food {
+  background-color: var(--category-food);
+}
+.tagCheckboxContainer.gaming {
+  background-color: var(--category-gaming);
+}
+.tagCheckboxContainer.philosophy {
+  background-color: var(--category-philosophy);
+}
+
+/* Responsive Design ============================= */
+@media screen and (max-width: 1280px) {
+  .tagCheckboxContainer {
+    width: 20%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .tagCheckboxContainer {
+    width: 25%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .tagCheckboxContainer {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .tagCheckboxContainer {
+    width: 100%;
+  }
+}
