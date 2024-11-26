@@ -12,6 +12,7 @@
     "@types/jsonwebtoken": "^9.0.7",
     "cookie": "^1.0.2",
     "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.2",
     "next": "15.0.2",
     "next-auth": "^4.24.10",
     "react": "19.0.0-rc-02c0e824-20241028",
