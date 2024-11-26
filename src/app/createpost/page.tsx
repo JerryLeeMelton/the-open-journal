@@ -6,10 +6,19 @@ import Image from "next/image"
 import ReactQuill from "react-quill-new"
 import "react-quill-new/dist/quill.snow.css"
 import "react-quill-new/dist/quill.bubble.css"
+import { useRouter } from "next/navigation"
+import { useUserAuth } from "@/context/UserAuthContext"
 
 const CreatePost = () => {
+  const router = useRouter()
+  const { loggedIn } = useUserAuth()
   const [addMenuOpen, setAddMenuOpen] = useState<boolean>(false)
   const [content, setContent] = useState<string>("")
+
+  if (!loggedIn) {
+    router.push("/login")
+    return <div>You are not logged in!</div>
+  }
 
   return (
     <div className={styles.container}>

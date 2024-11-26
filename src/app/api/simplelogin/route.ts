@@ -1,6 +1,4 @@
-import { NextApiRequest, NextApiResponse } from "next"
 import { NextRequest, NextResponse } from "next/server"
-import { serialize } from "cookie"
 import * as jwt from "jsonwebtoken"
 
 type LoginRequest = {
@@ -9,8 +7,6 @@ type LoginRequest = {
 }
 
 export const POST = async (req: NextRequest): Promise<NextResponse> => {
-  console.log("simplelogin  route!  :  req == ", req)
-
   try {
     const body = (await req.json()) as LoginRequest
     const { username, password } = body

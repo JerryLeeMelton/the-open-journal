@@ -3,16 +3,17 @@
 import { useState } from "react"
 import styles from "./LoginPage.module.css"
 import { useUserAuth } from "@/context/UserAuthContext"
+import { useRouter } from "next/navigation"
 
 const LoginPage = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [message, setMessage] = useState("")
-  const { loggedIn, user } = useUserAuth()
+  const { loggedIn, user, setLoginState } = useUserAuth()
+  const router = useRouter()
 
   const handleLoginRequest = async () => {
     if (username === "" || password === "") {
-      console.log("handleLoginRequest  :  username or password is empty")
       setMessage("Username and password cannot be empty")
       return
     }
@@ -25,10 +26,11 @@ const LoginPage = () => {
 
       const result = await response.json()
 
-      if (result.ok) {
+      if (response.ok) {
         setMessage(result.message)
-        // TODO: Redirect to home page
-        // TODO: Set cookie
+        setLoginState({ loggedIn: true, user: result.user })
+        window.location.href = "/"
+        router.push("/")
       } else {
         setMessage(result.message || "Login failed")
       }
@@ -57,7 +59,6 @@ const LoginPage = () => {
         </div>
         <p className={styles.message}>{message}</p>
       </div>
-      <div>{loggedIn ? "You are logged in!" : "You are not logged in!"}</div>
     </div>
   )
 }

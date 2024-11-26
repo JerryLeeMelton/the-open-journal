@@ -12,8 +12,6 @@ const AuthLinks: React.FC = () => {
   const router = useRouter()
 
   const handleLogoutRequest = async () => {
-    console.log("handleLogoutRequest")
-
     try {
       const response = await fetch("/api/simplelogout", {
         method: "POST",
@@ -21,9 +19,9 @@ const AuthLinks: React.FC = () => {
 
       const result = await response.json()
 
-      if (result.ok) {
+      if (response.ok) {
         setLoginState({ loggedIn: false, user: null })
-        router.push("/login")
+        router.push("/")
       }
     } catch (error) {
       console.error("handleLogoutRequest  :  error, inside catch == ", error)
@@ -34,7 +32,7 @@ const AuthLinks: React.FC = () => {
     <>
       {loggedIn ? (
         <>
-          <Link href="/newpost">Create</Link>
+          <Link href="/createpost">Create</Link>
           <span onClick={handleLogoutRequest} className={styles.link}>
             Logout
           </span>
@@ -65,7 +63,7 @@ const AuthLinks: React.FC = () => {
           </Link>
           {loggedIn ? (
             <>
-              <Link href="/newpost" className={styles["burger-menu-link"]}>
+              <Link href="/createpost" className={styles["burger-menu-link"]}>
                 Create
               </Link>
               <span

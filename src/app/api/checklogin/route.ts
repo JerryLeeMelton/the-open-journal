@@ -4,8 +4,8 @@ import * as jwt from "jsonwebtoken"
 export const GET = async (req: NextRequest): Promise<NextResponse> => {
   const token = req.cookies.get("auth_token")?.value
 
-  if (!token) {
-    return NextResponse.json({ isLoggedIn: false }, { status: 200 })
+  if (token === undefined || token === null) {
+    return NextResponse.json({ loggedIn: false, user: null }, { status: 200 })
   }
 
   try {

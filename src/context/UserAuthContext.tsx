@@ -1,11 +1,10 @@
 "use client"
 
 import React, { createContext, useContext, useState, useEffect } from "react"
-import { checkLoginStatus } from "@/utils/loginstatus"
 
 type UserAuthContextType = {
-  user?: any | null
   loggedIn: boolean
+  user?: any | null
   setLoginState: (state: { loggedIn: boolean; user: any }) => void
 }
 
@@ -23,8 +22,17 @@ export const UserAuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   useEffect(() => {
     const fetchLoginStatus = async () => {
-      const status = await checkLoginStatus()
-      setLoginState(status)
+      try {
+        const response = await fetch("/api/checklogin")
+        const result = await response.json()
+        if (response.ok) {
+          setLoginState({ loggedIn: result.loggedIn, user: result.user })
+        } else {
+          setLoginState({ loggedIn: false, user: null })
+        }
+      } catch (error) {
+        setLoginState({ loggedIn: false, user: null })
+      }
     }
 
     fetchLoginStatus()
